@@ -1,15 +1,16 @@
+// PortalButton.js
 import React from 'react';
-import  ReactDOM  from 'react-dom';
+import ReactDOM from 'react-dom';
 
-//complete this function using portals
-const PortalButton=()=>{
-    return (
-        <div>
-            <button id="button" onClick={}>Click</button>
-        </div>
-        
-    )
-}
+const PortalButton = ({ buttonClick }) => {
+  return ReactDOM.createPortal(
+    <div id="portal-button">
+      <button id="button" onClick={buttonClick}>
+        Click
+      </button>
+    </div>,
+    document.getElementById('root')
+  );
+};
+
 export default PortalButton;
-
-//portal-button id will be used here for portal purpose
